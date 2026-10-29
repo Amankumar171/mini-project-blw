@@ -7,7 +7,7 @@ from datetime import datetime, date
 from flask import Flask, redirect, render_template, request, send_file, send_from_directory, session, make_response, flash, get_flashed_messages
 
 app = Flask(__name__)
-app.secret_key = "blw-training-portal-secret-key"
+app.secret_key = os.environ.get("SECRET_KEY", "blw-training-portal-secret-key")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "training_portal.db")

@@ -23,7 +23,7 @@ A web-based Training Management System developed using Python, Flask, HTML, CSS,
 
 ## Live Website
 
-https://dlw.kesug.com
+
 
 ## Run the Project
 
