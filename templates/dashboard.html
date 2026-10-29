@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="dashboard-title">Banaras Locomotive Works Training Management Portal</div>
+<div class="welcome-box">
+<h2>Welcome, {{ username }} 👋</h2>
+<p>Use the options below to manage the portal.</p>
+</div>
+<div class="stats">
+<div class="card"><h2>Total Users</h2><h1>{{ user_count }}</h1></div>
+<div class="card"><h2>Total Attendance</h2><h1>{{ attendance_count }}</h1></div>
+<div class="card"><h2>Total Notices</h2><h1>{{ notice_count }}</h1></div>
+<div class="card"><h2>Present</h2><h1>{{ present_count }}</h1><p>{{ present_percent }}%</p></div>
+<div class="card"><h2>Absent</h2><h1>{{ absent_count }}</h1><p>{{ absent_percent }}%</p></div>
+</div>
+<div class="recent-notices">
+<h2>Latest Notices</h2>
+<marquee behavior="scroll" direction="left" scrollamount="10">
+{% for notice in recent %}
+📢 <b>{{ notice.title }}</b> - {{ notice.description }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{% endfor %}
+</marquee>
+</div>
+<div class="menu">
+<a href="/attendance.php" class="btn">Attendance Management</a>
+<a href="/notice.php" class="btn">Notice Board</a>
+<a href="/download_report.php" class="btn">Download Report</a>
+<a href="/logout.php" class="btn logout-btn">Logout</a>
+</div>
+</body>
+</html>

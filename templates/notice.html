@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/style.css">
+<title>Notice Board</title>
+</head>
+<body>
+<h1>Notice Board</h1>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<p class="attendance-message {{ category }}">{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<form action="/notice.php" method="post" class="page-form">
+Title:
+<input type="text" name="title" required>
+<br><br>
+Description:
+<br>
+<textarea name="description" rows="5" cols="40" required></textarea>
+<br><br>
+<button type="submit" name="save" value="Post Notice">Post Notice</button>
+</form>
+<hr>
+<h2>All Notices</h2>
+<table border="1" cellpadding="10">
+<tr>
+<th>S.NO</th>
+<th>Title</th>
+<th>Description</th>
+<th>Posted On</th>
+<th>Action</th>
+</tr>
+{% for row in notices %}
+<tr>
+<td>{{ loop.index }}</td>
+<td>{{ row.title }}</td>
+<td>{{ row.description }}</td>
+<td>{{ row.created_at }}</td>
+<td>
+<a href="/edit_notice.php?id={{ row.id }}">Edit</a> |
+<a href="/notice.php?delete={{ row.id }}" onclick="return confirm('Delete this notice?')">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+<br>
+<div class="back-btn">
+<a href="/dashboard.php" class="btn">Back to Dashboard</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,325 @@
+/* ===== GLOBAL ===== */
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+padding:0;
+background:#f4f6f9;
+}
+
+a{
+text-decoration:none;
+}
+
+/* ===== LOGIN PAGE ===== */
+
+.login-container{
+width:500px;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0px 0px 25px rgba(0,0,0,0.15);
+
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+
+text-align:center;
+}
+
+.logo img{
+width:120px;
+height:120px;
+object-fit:contain;
+display:block;
+margin:0 auto 15px;
+
+}
+
+.login-container h1{
+font-size:70px;
+color:#003366;
+margin:10px 0;
+}
+
+.login-container h2{
+font-size:22px;
+color:#555;
+margin:10px 0;
+}
+
+.subtitle{
+color:#777;
+margin-bottom:25px;
+}
+
+.login-container form{
+width:100%;
+margin:0;
+padding:0;
+}
+
+.login-container input{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:10px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+.login-container button{
+width:100%;
+padding:15px;
+background:#003366;
+color:white;
+border:none;
+border-radius:10px;
+font-size:18px;
+cursor:pointer;
+}
+
+.login-container button:hover{
+background:#0055aa;
+}
+
+/* ===== DASHBOARD ===== */
+
+.dashboard-title{
+background:#003366;
+color:white;
+padding:30px;
+text-align:center;
+font-size:40px;
+font-weight:bold;
+}
+
+.welcome-box{
+text-align:center;
+margin:25px 0;
+}
+
+.welcome-box h2{
+font-size:35px;
+color:#003366;
+margin-bottom:10px;
+}
+
+.welcome-box p{
+font-size:18px;
+color:#555;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin:20px;
+}
+
+.card{
+background:white;
+width:180px;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+text-align:center;
+transition:all 0.3s ease;
+border-top:5px solid #003366;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+
+.card h2{
+color:#003366;
+font-size:24px;
+margin-bottom:15px;
+}
+
+.card h1{
+font-size:55px;
+color:#003366;
+margin:0;
+}
+
+.card p{
+font-size:16px;
+font-weight:bold;
+color:#666;
+margin-top:10px;
+}
+/* ===== RECENT NOTICE ===== */
+
+.recent-notices{
+background:white;
+width:80%;
+margin:30px auto;
+padding:20px;
+border-radius:15px;
+box-shadow:0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.recent-notices h2{
+text-align:center;
+}
+
+.recent-notices marquee{
+font-size:18px;
+font-weight:bold;
+color:#003366;
+}
+
+/* ===== MENU ===== */
+
+.menu{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+margin:40px 0;
+}
+
+.btn{
+background:#003366;
+color:white;
+padding:15px 25px;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+min-width:220px;
+text-align:center;
+display:inline-block;
+}
+
+.btn:hover{
+background:#0055aa;
+}
+
+.logout-btn{
+background:#cc0000;
+}
+
+.logout-btn:hover{
+background:#990000;
+}
+
+/* ===== ATTENDANCE & NOTICE FORMS ===== */
+
+.page-form{
+width:600px;
+margin:30px auto;
+padding:25px;
+background:white;
+border-radius:15px;
+box-shadow:0px 0px 15px rgba(0,0,0,0.1);
+}
+
+.page-form input,
+.page-form select,
+.page-form textarea{
+width:95%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+/* ===== BUTTON ===== */
+
+button{
+background:#003366;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0055aa;
+}
+
+/* ===== TABLE ===== */
+
+table{
+width:95%;
+margin:20px auto;
+border-collapse:collapse;
+background:white;
+box-shadow:0px 0px 10px rgba(0,0,0,0.1);
+}
+
+table th{
+background:#003366;
+color:white;
+padding:12px;
+}
+
+table td{
+padding:10px;
+border:1px solid #ddd;
+text-align:center;
+}
+
+table tr:nth-child(even){
+background:#f7f7f7;
+}
+
+/* ===== BACK BUTTON ===== */
+
+.back-btn{
+text-align:center;
+margin:30px 0;
+}
+
+/* ===== FOOTER ===== */
+
+.footer{
+background:#003366;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+.login-container{
+width:90%;
+}
+
+.card{
+width:85%;
+}
+
+.page-form{
+width:90%;
+}
+
+.menu{
+flex-direction:column;
+align-items:center;
+}
+
+.btn{
+width:80%;
+}
+
+.recent-notices{
+width:90%;
+}
+}
+
+.attendance-message { font-weight: 600; padding: 10px 12px; border-radius: 4px; }
+.attendance-message.success { color: #155724; background: #d4edda; }
+.attendance-message.error { color: #721c24; background: #f8d7da; }

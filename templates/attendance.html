@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attendance Management</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Attendance Management</h1>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<p class="attendance-message {{ category }}">{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<form action="/attendance.php" method="post" class="page-form">
+<label>Name:</label>
+<input type="text" name="name" required>
+<br><br>
+<label>Date:</label>
+<input type="date" name="date" required>
+<br><br>
+<label>Status:</label>
+<select name="status">
+<option>Present</option>
+<option>Absent</option>
+</select>
+<br><br>
+<button type="submit" name="save" value="Save Attendance">Save Attendance</button>
+</form>
+<hr>
+<h2>Search Attendance</h2>
+<form action="/attendance.php" method="get" class="page-form">
+<input type="text" name="search" placeholder="Search by Name" value="{{ search }}">
+<input type="date" name="from_date" value="{{ from_date }}">
+<input type="date" name="to_date" value="{{ to_date }}">
+<button type="submit">Search</button>
+<a href="/attendance.php" class="btn">Clear</a>
+</form>
+<hr>
+<h2>Attendance Records</h2>
+<table border="1" cellpadding="10">
+<tr>
+<th>S.No.</th>
+<th>Name</th>
+<th>Date</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+{% for row in records %}
+<tr>
+<td>{{ loop.index }}</td>
+<td>{{ row.name }}</td>
+<td>{{ row.date }}</td>
+<td>{{ row.status }}</td>
+<td>
+<a href="/edit_attendance.php?id={{ row.id }}">Edit</a> |
+<a href="/attendance.php?delete={{ row.id }}" onclick="return confirm('Delete this record?')">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+<br><br>
+<div class='back-btn'>
+<a href='/dashboard.php' class='btn'>Back to Dashboard</a>
+</div>
+</body>
+</html>

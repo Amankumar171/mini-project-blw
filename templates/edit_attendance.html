@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit Attendance</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Edit Attendance</h1>
+<form method="post" class="page-form">
+<input type="text" name="name" value="{{ record.name }}">
+<br><br>
+<input type="date" name="date" value="{{ record.date }}">
+<br><br>
+<select name="status">
+<option {% if record.status == 'Present' %}selected{% endif %}>Present</option>
+<option {% if record.status == 'Absent' %}selected{% endif %}>Absent</option>
+</select>
+<br><br>
+<button type="submit" name="update">Update Attendance</button>
+</form>
+</body>
+</html>
