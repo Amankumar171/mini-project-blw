@@ -21,15 +21,8 @@ A web-based Training Management System developed using Python, Flask, HTML, CSS,
 - SQLite
 - GitHub
 
-## Live Website
-
-
-
-## Run the Project
-
-1. Install Python 3.12 and Flask: `py -3.12 -m pip install Flask==3.0.3`
-2. Run `run_project.bat`, or execute `python app.py` from this folder.
-3. Open http://localhost:5000/index.php
+## Live weside
+https://mini-project-blw.onrender.com/
 
 Default login: `aman` / `aman123`
 
