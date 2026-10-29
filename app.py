@@ -245,13 +245,13 @@ def edit_attendance_page():
         return redirect("/attendance.php")
 
     if request.method == "POST" and request.form.get("update"):
-        name = request.form.get("name", "")
-        date = request.form.get("date", "")
+        name = request.form.get("name", "").strip()
+        attendance_date = request.form.get("date", "")
         status = request.form.get("status", "Present")
         conn = get_db()
         conn.execute(
             "UPDATE attendance SET name = ?, date = ?, status = ? WHERE id = ?",
-            (name, date, status, record_id),
+            (name, attendance_date, status, record_id),
         )
         conn.commit()
         conn.close()
